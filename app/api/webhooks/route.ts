@@ -47,7 +47,6 @@ export async function POST(req: Request) {
                             postalCode: shippingAddress!.postal_code!,
                             street: shippingAddress!.line1!,
                             state: shippingAddress!.state!
-
                         }
                     },
                     billingAddress: {
@@ -58,7 +57,6 @@ export async function POST(req: Request) {
                             postalCode: billingAddress!.postal_code!,
                             street: billingAddress!.line1!,
                             state: billingAddress!.state!
-
                         }
                     }
                 }
