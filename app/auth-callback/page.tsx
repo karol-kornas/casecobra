@@ -11,9 +11,11 @@ const Page = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const configurationId = localStorage.getItem("configurationId");
-
-    if (configurationId) setConfigId(configurationId);
+    const ISSERVER = typeof window === "undefined";
+    if (!ISSERVER) {
+      const configurationId = localStorage.getItem("configurationId");
+      if (configurationId) setConfigId(configurationId);
+    }
   }, []);
 
   const { data } = useQuery({
@@ -25,8 +27,11 @@ const Page = () => {
 
   if (data?.success) {
     if (configId) {
-      localStorage.removeItem("configurationId");
-      router.push(`/configure/preview?id=${configId}`);
+      const ISSERVER = typeof window === "undefined";
+      if (!ISSERVER) {
+        localStorage.removeItem("configurationId");
+        router.push(`/configure/preview?id=${configId}`);
+      }
     } else {
       router.push("/");
     }

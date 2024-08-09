@@ -76,8 +76,11 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
       createPaymentSession({ configId: id });
     } else {
       //need to log in
-      localStorage.setItem("configurationId", id);
-      setIsLoginModalOpen(true);
+      const ISSERVER = typeof window === "undefined";
+      if (!ISSERVER) {
+        localStorage.setItem("configurationId", id);
+        setIsLoginModalOpen(true);
+      }
     }
   };
 
