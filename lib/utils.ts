@@ -42,5 +42,6 @@ export function constructMetadata({
       creator: "@karolkornas"
     },
     icons,
+    metadataBase: new URL('https://casecobra-khaki-one.vercel.app/')
   }
 }
