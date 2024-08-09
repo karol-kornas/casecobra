@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@headlessui/react": "1.7.19",
+    "@headlessui/react": "^2.1.2",
     "@kinde-oss/kinde-auth-nextjs": "2.2.4",
     "@prisma/client": "5.13.0",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
